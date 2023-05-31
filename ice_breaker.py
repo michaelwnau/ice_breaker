@@ -19,7 +19,9 @@ if __name__ ==  '__main__':
     print("Hello LangChain!")
     
     summary_template = """
-    given the information {information}
+    given the LinkedIn information {information} about a person I want you to create:
+    1. a short biographical summary of the person
+    2. two interesting facts about the person
     """
     
     summary_prompt_template = PromptTemplate(input_variables="information", template=summary_template)
