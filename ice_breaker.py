@@ -19,16 +19,19 @@ Musk has expressed views that have made him a polarizing figure. He has been cri
 if __name__ ==  '__main__':
     print("Hello LangChain!")
     
-    summary_template = """
-    given the LinkedIn information {information} about a person I want you to create:
-    1. a short biographical summary of the person
-    2. two interesting facts about the person
-    """
+    # summary_template = """
+    # given the LinkedIn information {information} about a person I want you to create:
+    # 1. a short biographical summary of the person
+    # 2. two interesting facts about the person
+    # """
     
-    summary_prompt_template = PromptTemplate(input_variables="information", template=summary_template)
+    # summary_prompt_template = PromptTemplate(input_variables="information", template=summary_template)
     
-    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+    # llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
     
-    chain = LLMChain(llm=llm, prompt=summary_prompt_template)
+    # chain = LLMChain(llm=llm, prompt=summary_prompt_template)
     
-    print(chain.run(information=infomration))
+    # print(chain.run(information=infomration))
+    
+    linkedin_data = scrape_linkedin_profile("https://www.linkedin.com/in/harrison-chase-961287118/")
+    print(linkedin_data)
