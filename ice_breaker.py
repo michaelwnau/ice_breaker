@@ -2,7 +2,7 @@ import langchain as lc
 from langchain import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
-
+from third_parties.linkedin import scrape_linkedin_profile
 
 information = """ 
 Elon Reeve Musk (/ˈiːlɒn/ EE-lon; born June 28, 1971) is a business magnate and investor. He is the founder, CEO and chief engineer of SpaceX; angel investor, CEO and product architect of Tesla, Inc.; owner and CEO of Twitter, Inc.; founder of the Boring Company; co-founder of Neuralink and OpenAI; and president of the philanthropic Musk Foundation. Musk is the second-wealthiest person in the world, according to both the Bloomberg Billionaires Index and Forbes's Real Time Billionaires list as of May 2023 primarily from his ownership stakes in Tesla and SpaceX, with an estimated net worth of around $167 billion according to the Bloomberg and $176.2 billion according to Forbes.[4][5][6][7]
@@ -33,5 +33,5 @@ if __name__ ==  '__main__':
     
     # print(chain.run(information=infomration))
     
-    linkedin_data = scrape_linkedin_profile("https://www.linkedin.com/in/harrison-chase-961287118/")
-    print(linkedin_data)
+    linkedin_data = scrape_linkedin_profile(linkedin_profile_url="https://www.linkedin.com/in/harrison-chase-961287118/")
+    print(linkedin_data.json)
